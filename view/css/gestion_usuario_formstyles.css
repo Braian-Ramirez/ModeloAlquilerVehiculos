@@ -1,7 +1,7 @@
 /* Inicio styles gestion_usuario_from.html */
 /* Estilo global para el fondo del cuerpo */
 body {
-    background-image: url('../img/13554-carreteras.jpg');
+    background-image: url('../../img/13554-carreteras.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,10 +1,10 @@
 body {
-    background-image: url('../img/imagenvehiculos.jpg');
+    background-image: url('../../img/imagenvehiculos.jpg');
     background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     font-family: Arial, sans-serif;
-    color: white; /* Color del texto principal */
+    color: #004d40; /* Color del texto principal */
     margin: 0;
     padding: 0;
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
@@ -13,6 +13,7 @@ body {
     justify-content: center;
     flex-direction: column; /* Asegura que los elementos hijos se alineen en una columna */
 }
+
 /* Estilos para el modal */
 .modal {
     display: none; /* Oculto por defecto */
@@ -28,18 +29,36 @@ body {
 
 /* Estilos para el contenido del modal */
 .modal-content {
-    background-color:rgba(0, 0, 0, 0.6); /* Fondo del modal */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el modal */
     margin: 15% auto; /* Centra el modal verticalmente y horizontalmente */
     padding: 20px;
     border-radius: 8px;
     max-width: 500px; /* Máximo ancho del modal */
+    color: white;
+    position: relative; /* Para posicionar el botón de cerrar */
     text-align: center; /* Centra el texto dentro del modal */
 }
 
-/* Estilo para los botones dentro del modal */
-.modal-btn {
+/* Estilo para el botón de cerrar */
+.modal .close {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo para el mensaje del modal */
+#modalMessage {
+    margin: 20px 0;
+}
+
+/* Estilo para el botón dentro del modal */
+.modal .button {
     display: inline-block;
-    background-color: #ff5722; /* Color de fondo del botón */
+    background-color: orangered;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -47,38 +66,10 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    border: none;
-    margin: 10px;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 20px; /* Añade margen superior para separación del texto */
 }
 
-.modal-btn.cancel {
-    background-color: #757575; /* Botón de cancelar en gris */
-}
-
-.modal-btn:hover {
-    background-color: darkorange; /* Color más oscuro al pasar el ratón */
-}
-
-.modal-btn.cancel:hover {
-    background-color: #616161; /* Color más oscuro al pasar el ratón */
-}
-
-/* Estilo para el botón de cerrar */
-.modal .close {
-    color: #aaa;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.modal .close:hover,
-.modal .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+/* Estilo para el botón al pasar el ratón */
+.modal .button:hover {
+    background-color: darkorange;
 }

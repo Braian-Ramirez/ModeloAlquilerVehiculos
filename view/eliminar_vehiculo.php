@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Vehículo</title>
-    <link rel="stylesheet" href="../view/eliminacion_styles.css">
+    <link rel="stylesheet" href="css/eliminacion_styles.css">
 </head>
 <body>
 <?php

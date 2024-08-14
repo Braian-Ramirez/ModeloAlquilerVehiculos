@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/imagenvehiculos.jpg');
+    background-image: url('../../img/imagenvehiculos.jpg');
     background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */

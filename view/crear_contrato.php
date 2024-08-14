@@ -14,7 +14,7 @@ $id_vehiculo = isset($_GET['id_vehiculo']) ? htmlspecialchars($_GET['id_vehiculo
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Contrato</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="crear_contratostyles.css">
+    <link rel="stylesheet" href="css/crear_contratostyles.css">
     <style>
     </style>
 </head>

@@ -1,7 +1,7 @@
 /* Inicio styles editar_usuario_form.html */
 /* Estilo para el fondo de la ventana modal */
 body {
-    background-image: url('../img/13554-carreteras.jpg');
+    background-image: url('../../img/13554-carreteras.jpg');
     background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Vehículo</title>
-    <link rel="stylesheet" href="../view/modificar_vehiculostyles.css">
+    <link rel="stylesheet" href="css/modificar_vehiculostyles.css">
 
 </head>
 <body>
