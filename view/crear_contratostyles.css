@@ -1,0 +1,90 @@
+/* Fondo de pantalla */
+body {
+    background-image: url('../img/contrato.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* La imagen estará centrada */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* La imagen permanecerá fija */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    color: #333; /* Color del texto por defecto */
+}
+
+/* Estilos para el contenedor */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del título */
+h2 {
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para las etiquetas de los campos del formulario */
+.form-group label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* Estilos para los campos del formulario */
+.form-control {
+    border-radius: 6px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Efecto de foco en los campos */
+.form-control:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    border-color: #007bff;
+}
+
+/* Estilo del botón personalizado */
+.btn-custom {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover del botón */
+.btn-custom:hover {
+    background-color: #218838;
+}
+
+/* Estilo del modal */
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #218838;
+}

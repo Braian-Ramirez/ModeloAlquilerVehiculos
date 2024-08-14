@@ -1,23 +1,19 @@
-/* estilos.css */
+/* contratostyles.css */
+
 body {
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xataka.com%2Fautomovil%2Fquieres-instalar-camara-tu-coche-esto-que-dice-ley-ellas-1&psig=AOvVaw3vpxkMoSl7OWnD2pT-pONp&ust=1723763462762000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDHxrzN9YcDFQAAAAAdAAAAABAa');
-    background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
-    background-position: center; /* Centra la imagen en la pantalla */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../img/contrato2.jpg'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    font-family: Arial, sans-serif;
-    color: #004d40; /* Color del texto principal */
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-attachment: fixed; /* Mantén la imagen fija mientras se desplaza */
+    color: #333;
 }
 
 .container {
     max-width: 600px;
     margin-top: 50px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo blanco semitransparente */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -32,7 +28,7 @@ h2 {
 
 .form-group label {
     font-weight: 600;
-    color: #555;
+    color: whitesmoke;
 }
 
 .form-control {

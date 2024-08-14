@@ -1,17 +1,17 @@
 body {
     background-image: url('../img/imagenvehiculos.jpg');
-    background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    color: #004d40; /* Color del texto principal */
+    color: #004d40;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Asegura que los elementos hijos se alineen en una columna */
+    flex-direction: column;
 }
 
 /* Estilos para el encabezado del formulario */
@@ -54,13 +54,13 @@ form input[type="submit"] {
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
-    width: 48%; /* Hace que el botón ocupe casi todo el ancho disponible */
+    width: 48%;
     margin-right: 4%;
 }
 
 /* Estilo para el segundo botón de enviar en el formulario */
 form input[type="submit"]:last-child {
-    margin-right: 0; /* Quita el margen derecho del último botón */
+    margin-right: 0;
 }
 
 /* Estilo para el botón de enviar al pasar el ratón */
@@ -72,4 +72,26 @@ form input[type="submit"]:hover {
 form[style*="display:inline;"] {
     display: inline; /* Asegura que el formulario de eliminación esté en línea */
     margin-left: 20px;
+}
+
+/* Centrar el botón de eliminar en su contenedor */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrará los elementos hijos dentro del contenedor */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 10px; /* Espacio superior para los botones */
+}
+
+form[style*="display:inline;"] input[type="submit"] {
+    margin: 0 auto; /* Centra el botón de eliminar */
+    background-color: red; /* Cambia el color de fondo del botón de eliminar */
+    width: auto; /* Asegura que el botón no ocupe más ancho del necesario */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form[style*="display:inline;"] input[type="submit"]:hover {
+    background-color: darkred; /* Cambia el color de fondo al pasar el ratón */
 }
