@@ -47,6 +47,6 @@ if (isset($_POST['id_vehiculo'])) {
 $conn->close();
 
 // Redirigir al archivo HTML que mostrará el modal
-header("Location: ../view/eliminar_vehiculo.html");
+header("Location: ../view/eliminar_vehiculo.php");
 exit();
 ?>
