@@ -55,11 +55,47 @@ $id_vehiculo = isset($_GET['id_vehiculo']) ? htmlspecialchars($_GET['id_vehiculo
             <label for="fecha_final">Fecha Final:</label>
             <input type="date" class="form-control" id="fecha_final" name="fecha_final">
         </div>
+        <div class="form-group">
+            <label for="serial_contrato">Serial Contrato:</label>
+            <input type="text" class="form-control" id="serial_contrato" name="serial_contrato">
+        </div>
         <button type="submit" class="btn btn-custom">Crear Contrato</button>
     </form>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Contrato Creado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+                    Contrato creado exitosamente. Su alquiler del vehículo con placa <?php echo htmlspecialchars($_GET['placa']); ?> por <?php echo htmlspecialchars($_GET['dias']); ?> días es de $<?php echo number_format($_GET['precio']); ?> COP.
+                <?php endif; ?>
+            </div>
+            <div class="modal-footer">
+                <a href="../View/index.html" class="btn btn-secondary">Cerrar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Mostrar el modal si se recibió una respuesta exitosa
+        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+        $('#successModal').modal('show');
+        <?php endif; ?>
+    });
+</script>
 </body>
 </html>
