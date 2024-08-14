@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="../view/gestion_usuario_formstyles.css">
+</head>
+<body>
+<div id="containerGU" class="container">
+    <?php if (isset($usuario)): ?>
+    <h3>Datos del Usuario Encontrado</h3>
+    <form action="../controller/gestion_usuario.php" method="GET">
+        <ul>
+            <li><strong>Nombre:</strong> <?php echo htmlspecialchars($usuario['nombre']); ?></li>
+            <li><strong>Correo:</strong> <?php echo htmlspecialchars($usuario['correo']); ?></li>
+            <li><strong>Fecha de Nacimiento:</strong> <?php echo htmlspecialchars($usuario['fecha_nacimiento']); ?></li>
+            <li><strong>Número de Identificación:</strong> <?php echo htmlspecialchars($usuario['numero_identificacion']); ?></li>
+            <li><strong>Ciudad de Residencia:</strong> <?php echo htmlspecialchars($usuario['ciudad_residencia']); ?></li>
+            <li><strong>Dirección:</strong> <?php echo htmlspecialchars($usuario['direccion']); ?></li>
+            <li><strong>Teléfono:</strong> <?php echo htmlspecialchars($usuario['telefono']); ?></li>
+        </ul>
+
+        <div class="options">
+            <a href="../Model/editar_usuario.php?id=<?php echo urlencode($usuario['id_usuario']); ?>">Modificar</a>
+            <a href="../Model/eliminar_usuario.php?id=<?php echo urlencode($usuario['id_usuario']); ?>">Eliminar</a>
+        </div>
+    </form>
+    <?php else: ?>
+    <p>No se encontraron resultados para el número de identificación proporcionado.</p>
+    <?php endif; ?>
+</div>
+</body>
+</html>

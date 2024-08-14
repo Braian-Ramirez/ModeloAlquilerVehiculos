@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Arrendatario</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="containerRA" class="form-container">
+    <h1 id="titulo1">Registrar Arrendatario</h1>
+    <form id="registroForm" action="../Model/registrar_arrendatario.php" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="numero_identificacion">Número de Identificación:</label>
+            <input type="text" id="numero_identificacion" name="numero_identificacion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad_residencia">Ciudad de Residencia:</label>
+            <input type="text" id="ciudad_residencia" name="ciudad_residencia" required>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+        </div>
+
+        <div class="button-container">
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+</div>
+
+
+<!-- Modal para mostrar el resultado del registro -->
+<div id="modal_registro_usuario" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="cerrarModal()">×</button>
+        <p id="modalMensaje"></p>
+        <button class="modal-btn" onclick="window.location.href='index.html'">Ir a Inicio</button>
+        <button class="modal-btn" onclick="window.location.href='buscar_usuario.html'">Buscar Usuario</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('modal_registro_usuario');
+        const modalMessage = document.getElementById('modalMensaje');
+
+        function mostrarModal(mensaje) {
+            modalMessage.textContent = mensaje;
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            modal.style.display = 'none';
+        }
+
+        // Verificar el parámetro en la URL para mostrar el mensaje adecuado
+        const urlParams = new URLSearchParams(window.location.search);
+        const registro = urlParams.get('registro');
+
+        if (registro === 'exitoso') {
+            mostrarModal('¡Registro exitoso!');
+        } else if (registro === 'error') {
+            mostrarModal('Error al registrar el arrendatario. Por favor, intente de nuevo.');
+        }
+
+        document.querySelector('.modal-close').addEventListener('click', cerrarModal);
+    });
+</script>
+</body>
+</html>

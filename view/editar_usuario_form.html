@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Edición de Usuario</title>
+    <link rel="stylesheet" href="../view/editar_usuario_formstyles.css">
+</head>
+<body>
+<div id="containerEU" class="container">
+    <form action="../Model/editar_usuario.php?id=<?php echo $id_usuario; ?>" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>" required>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" value="<?php echo htmlspecialchars($correo); ?>" required>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo htmlspecialchars($fecha_nacimiento); ?>" max="<?php echo date('Y-m-d'); ?>" required>
+
+        <label for="numero_identificacion">Número de Identificación:</label>
+        <input type="text" id="numero_identificacion" name="numero_identificacion" value="<?php echo htmlspecialchars($numero_identificacion); ?>" required>
+
+        <label for="ciudad_residencia">Ciudad de Residencia:</label>
+        <input type="text" id="ciudad_residencia" name="ciudad_residencia" value="<?php echo htmlspecialchars($ciudad_residencia); ?>" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" value="<?php echo htmlspecialchars($direccion); ?>" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" value="<?php echo htmlspecialchars($telefono); ?>" required>
+
+        <button type="submit">Actualizar Usuario</button>
+    </form>
+</div>
+
+<!-- Modal para mostrar el resultado de la actualización -->
+<?php if ($actualizacion_exitosa): ?>
+<div id="modalResultado" class="modal" aria-labelledby="modalMensaje" aria-modal="true">
+    <div class="modal-content">
+        <button class="modal-close" onclick="cerrarModal()">×</button>
+        <p id="modalMensaje">Usuario actualizado correctamente.</p>
+        <button class="modal-btn" onclick="window.location.href='../view/index.html'">Ir a Inicio</button>
+        <button class="modal-btn" onclick="window.location.href='../view/buscar_usuario.html'">Buscar Usuario</button>
+    </div>
+</div>
+<script>
+    // Mostrar el modal al cargar la página si la actualización fue exitosa
+    window.onload = function () {
+        document.getElementById('modalResultado').style.display = 'block';
+    };
+
+    // Función para cerrar el modal
+    function cerrarModal() {
+        document.getElementById('modalResultado').style.display = 'none';
+    }
+
+    // Cerrar modal si se hace clic fuera del contenido
+    window.onclick = function (event) {
+        const modal = document.getElementById('modalResultado');
+        if (event.target === modal) {
+            cerrarModal();
+        }
+    };
+</script>
+<?php endif; ?>
+</body>
+</html>

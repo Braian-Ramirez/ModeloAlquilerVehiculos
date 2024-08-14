@@ -1,0 +1,105 @@
+/* Estilos generales para el encabezado */
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+body {
+    background-image: url('../img/imagenvehiculos.jpg');
+    background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-family: Arial, sans-serif;
+    color: #004d40; /* Color del texto principal */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Estilos para los campos del formulario */
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de enviar */
+form input[type="submit"] {
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de enviar al pasar el ratón */
+form input[type="submit"]:hover {
+    background-color: darkorange;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color:rgba(0, 0, 0, 0.6);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Estilo para el mensaje del modal */
+#modalMessage {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Estilo para el botón de cerrar del modal */
+.close-btn {
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilo para el botón de cerrar del modal al pasar el ratón */
+.close-btn:hover {
+    background-color: darkorange;
+}

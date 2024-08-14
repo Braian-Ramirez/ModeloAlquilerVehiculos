@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vehículo</title>
+    <link rel="stylesheet" href="../view/registrar_vehiculostyles.css">
+</head>
+<body>
+<form action="../Model/registrar_vehiculo.php" method="post">
+    <h2>Registro de Vehículo</h2>
+    Placa: <input type="text" name="placa" required><br>
+    SOAT: <input type="text" name="soat" required><br>
+    Tipo de Vehículo:
+    <select name="tipo_vehiculo" required>
+        <option value="moto">Moto</option>
+        <option value="carro">Carro</option>
+    </select><br>
+    Tecno-Mecánica:
+    <select name="tecno_mecanica" required>
+        <option value="vigente">Vigente</option>
+        <option value="no_vigente">No vigente</option>
+    </select><br>
+    Clase de Vehículo:
+    <select name="clase_vehiculo" required>
+        <option value="electrico">Eléctrico</option>
+        <option value="gasolina">Gasolina</option>
+    </select><br>
+    <input type="submit" value="Registrar">
+</form>
+
+<!-- Modal de confirmación -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p id="modalMessage"></p>
+        <button class="close-btn" id="closeModal">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    // Mostrar el modal y establecer el mensaje
+    function showModal(message) {
+        document.getElementById("modalMessage").innerText = message;
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    // Cerrar el modal y redirigir a la página de registro
+    document.getElementById("closeModal").onclick = function() {
+        window.location.href = "registrar_vehiculo.html";
+    };
+
+    // Verificar si hay un parámetro de estado en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+
+    if (status === 'success') {
+        showModal('Vehículo registrado exitosamente');
+    } else if (status === 'error') {
+        showModal('Error al registrar vehículo');
+    }
+</script>
+</body>
+</html>

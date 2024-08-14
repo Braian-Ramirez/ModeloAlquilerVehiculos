@@ -1,0 +1,75 @@
+body {
+    background-image: url('../img/imagenvehiculos.jpg');
+    background-size: cover; /* Escala la imagen para cubrir toda la pantalla sin distorsionarse */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-family: Arial, sans-serif;
+    color: #004d40; /* Color del texto principal */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Asegura que los elementos hijos se alineen en una columna */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa el ancho completo */
+    height: 100%; /* Ocupa el alto completo */
+    overflow: auto; /* Permite el desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el modal */
+    margin: 15% auto; /* Centra el modal verticalmente y horizontalmente */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px; /* Máximo ancho del modal */
+    color: white;
+    position: relative; /* Para posicionar el botón de cerrar */
+    text-align: center; /* Centra el texto dentro del modal */
+}
+
+/* Estilo para el botón de cerrar */
+.modal .close {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo para el mensaje del modal */
+#modalMessage {
+    margin: 20px 0;
+}
+
+/* Estilo para el botón dentro del modal */
+.modal .button {
+    display: inline-block;
+    background-color: orangered;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px; /* Añade margen superior para separación del texto */
+}
+
+/* Estilo para el botón al pasar el ratón */
+.modal .button:hover {
+    background-color: darkorange;
+}

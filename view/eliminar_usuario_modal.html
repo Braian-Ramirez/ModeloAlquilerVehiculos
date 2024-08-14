@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario</title>
+    <link rel="stylesheet" href="../view/modal_eliminar_usuariostyles.css">
+</head>
+<body>
+<!-- Modal para confirmación -->
+<div id="modalConfirmacion" class="modal" style="display: block;">
+    <div class="modal-content">
+        <p>¿Está seguro de eliminar al usuario?</p>
+        <button class="modal-btn" onclick="confirmarEliminacion()">Sí, Eliminar</button>
+        <button class="modal-btn" onclick="cancelarEliminacion('modalConfirmacion')">Cancelar</button>
+    </div>
+</div>
+
+<!-- Modal para el resultado -->
+<div id="modalResultado" class="modal">
+    <div class="modal-content">
+        <p id="resultadoMensaje"></p>
+        <button class="modal-btn" onclick="cerrarModalResultado()">Cerrar</button>
+    </div>
+</div>
+
+<!-- Script para manejar los modales -->
+<script>
+    var id_usuario = "<?php echo isset($id_usuario) ? htmlspecialchars($id_usuario) : ''; ?>";
+
+    function cerrarModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    function mostrarModal(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function confirmarEliminacion() {
+        if (id_usuario) {
+            // Cierra el modal de confirmación
+            cerrarModal('modalConfirmacion');
+
+            // Realiza la petición para eliminar el usuario
+            fetch('../Model/eliminar_usuario.php?id=' + id_usuario + '&confirmar_eliminar=1')
+                .then(response => response.text())
+                .then(data => {
+                    // Mostrar el segundo modal con el mensaje correspondiente
+                    document.getElementById('resultadoMensaje').textContent = data.includes('El usuario ha sido eliminado correctamente.')
+                        ? 'El usuario ha sido eliminado correctamente.'
+                        : 'Hubo un error al eliminar el usuario.';
+                    mostrarModal('modalResultado');
+                })
+                .catch(error => {
+                    document.getElementById('resultadoMensaje').textContent = 'Hubo un error al eliminar el usuario.';
+                    mostrarModal('modalResultado');
+                });
+        } else {
+            alert('No se proporcionó un ID de usuario válido.');
+        }
+    }
+
+    function cerrarModalResultado() {
+        cerrarModal('modalResultado');
+        // Redirige a la página de búsqueda después de cerrar el modal de resultado
+        window.location.href = '../view/buscar_usuario.html';
+    }
+
+    // Mostrar el modal de confirmación al cargar la página si es necesario
+    window.onload = function() {
+        // Código para mostrar el modal de confirmación si es necesario
+        mostrarModal('modalConfirmacion');
+    }
+    function cancelarEliminacion() {
+        // Redirige a la página de búsqueda al hacer clic en "Cancelar"
+        window.location.href = '../view/buscar_usuario.html';
+    }
+</script>
+
+</body>
+</html>
