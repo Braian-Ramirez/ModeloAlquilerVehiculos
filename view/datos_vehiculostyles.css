@@ -45,33 +45,12 @@ form select {
     color: black;
 }
 
-/* Estilo para los botones de enviar */
-form input[type="submit"] {
-    background-color: orangered;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 48%;
-    margin-right: 4%;
-}
-
-/* Estilo para el segundo botón de enviar en el formulario */
-form input[type="submit"]:last-child {
-    margin-right: 0;
-}
-
-/* Estilo para el botón de enviar al pasar el ratón */
-form input[type="submit"]:hover {
-    background-color: darkorange;
-}
-
-/* Estilo para el formulario de eliminación que está en línea */
-form[style*="display:inline;"] {
-    display: inline; /* Asegura que el formulario de eliminación esté en línea */
-    margin-left: 20px;
+/* Estilo para el contenedor de acción que envuelve ambos formularios */
+.action-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px; /* Espacio entre los formularios de modificar y eliminar */
 }
 
 /* Centrar el botón de eliminar en su contenedor */
@@ -80,18 +59,4 @@ form[style*="display:inline;"] {
     justify-content: center; /* Centrará los elementos hijos dentro del contenedor */
     gap: 10px; /* Espacio entre los botones */
     margin-top: 10px; /* Espacio superior para los botones */
-}
-
-form[style*="display:inline;"] input[type="submit"] {
-    margin: 0 auto; /* Centra el botón de eliminar */
-    background-color: red; /* Cambia el color de fondo del botón de eliminar */
-    width: auto; /* Asegura que el botón no ocupe más ancho del necesario */
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-form[style*="display:inline;"] input[type="submit"]:hover {
-    background-color: darkred; /* Cambia el color de fondo al pasar el ratón */
 }

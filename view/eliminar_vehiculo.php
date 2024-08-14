@@ -76,7 +76,7 @@ $placa = $_POST['placa'];
     function cerrarModalResultado() {
         cerrarModal('modalResultado');
         // Redirige a la página de búsqueda después de cerrar el modal de resultado
-        window.location.href = '../view/buscar_vehiculo.html';
+        window.location.href = '../view/index.html';
     }
 
     // Mostrar el modal de confirmación al cargar la página
@@ -86,7 +86,7 @@ $placa = $_POST['placa'];
 
     function cancelarEliminacion() {
         // Redirige a la página de búsqueda al hacer clic en "Cancelar"
-        window.location.href = '../view/buscar_vehiculo.html';
+        window.location.href = '../view/index.html';
     }
 </script>
 </body>
